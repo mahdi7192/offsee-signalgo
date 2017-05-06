@@ -24,7 +24,7 @@ App.service('signalGo', function () {
   };
 
   function addToOnCallback(on, callback){
-    if(onCallbacks[on] == undefined) onCallbacks[on],
+    if(onCallbacks[on] == undefined) onCallbacks[on];
     onCallbacks[on].push(callback);
   }
 
