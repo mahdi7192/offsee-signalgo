@@ -118,107 +118,107 @@ App.service('signalGo', function () {
 
   currentService.question = {
     getMyQuestions: function (index, length, callback) {
-      this.service.Send("FilterQuestionsQOK", index, length, callback);
+      currentService.service.Send("FilterQuestionsQOK", index, length, callback);
     },
     updateQuestion: function (question, callback) {
-      this.service.Send("UpdateQuestionQOK", question, callback);
+      currentService.service.Send("UpdateQuestionQOK", question, callback);
     },
     addQuestion: function (question, callback) {
-      this.service.Send("AddQuestionQOK", question, callback);
+      currentService.service.Send("AddQuestionQOK", question, callback);
     },
     removeQuestion: function (questionId, callback) {
-      this.service.Send("RemoveQuestionQOK", questionId, callback);
+      currentService.service.Send("RemoveQuestionQOK", questionId, callback);
     },
     getSubjects: function (callback) {
-      this.service.Send("GetAllSubjectsQOK", callback);
+      currentService.service.Send("GetAllSubjectsQOK", callback);
     },
     order: function (order, callback) {
-      this.service.Send("AddQuestionOrderQOK", order, callback);
+      currentService.service.Send("AddQuestionOrderQOK", order, callback);
     },
     getStatistics: function (questionId, callback) {
-      this.service.Send("GetQuestionStatistics", questionId, callback);
+      currentService.service.Send("GetQuestionStatistics", questionId, callback);
     },
   }
 
   currentService.credit = {
     getLog: function (index, length, callback) {
-      this.service.Send("GetUserPaymentLogs", index, length, callback);
+      currentService.service.Send("GetUserPaymentLogs", index, length, callback);
     },
     generateCode: function (value, limitUser, callback) {
-      this.service.Send("GenerateUserTransferCode", value, limitUser, callback);
+      currentService.service.Send("GenerateUserTransferCode", value, limitUser, callback);
     },
     getCurrentCredit: function (callback) {
-      this.service.Send("GetUserCredit", callback);
+      currentService.service.Send("GetUserCredit", callback);
     },
   }
 
   currentService.taxi = {
     transport: {
       getAllTransports: function (index, length, callback) {
-        this.service.Send("GetAllTransports", index, length, callback);
+        currentService.service.Send("GetAllTransports", index, length, callback);
       },
       confirmTransport: function (transportId, confirm, callback) {
-        this.service.Send("ConfirmTransport", transportId, confirm, callback);
+        currentService.service.Send("ConfirmTransport", transportId, confirm, callback);
       },
       increaseTransportCharge: function (transportId, charge, callback) {
-        this.service.Send("IncreaseTransportCharge", transportId, charge, callback);
+        currentService.service.Send("IncreaseTransportCharge", transportId, charge, callback);
       },
       editTransport: function (agencyInfo, callback) {
-        this.service.Send("EditTransport", agencyInfo, callback);
+        currentService.service.Send("EditTransport", agencyInfo, callback);
       },
       deleteTransport: function (id, callback) {
-        this.service.Send("DeleteTransport", id, callback);
+        currentService.service.Send("DeleteTransport", id, callback);
       },
       changeTransportPassword: function (transportId, newPassword, oldPassword, callback) {
-        this.service.Send("ChangeTransportPassword", transportId, newPassword, oldPassword, callback);
+        currentService.service.Send("ChangeTransportPassword", transportId, newPassword, oldPassword, callback);
       },
     },
 
     driver:{
       getDriverById: function (driverId, callback) {
-        this.service.Send("GetDriverInfo", driverId, callback);
+        currentService.service.Send("GetDriverInfo", driverId, callback);
       },
       getMyDrivers: function (transportId, callback) {
-        this.service.Send("GetDriversByTransportId", transportId, callback);
+        currentService.service.Send("GetDriversByTransportId", transportId, callback);
       },
       addDriver: function (DriverInfo, PlaqueInfo, callback) {
-        this.service.Send("WAddDriver", DriverInfo, PlaqueInfo, callback);
+        currentService.service.Send("WAddDriver", DriverInfo, PlaqueInfo, callback);
       },
       editDriver: function (driverInfo, callback) {
-        this.service.Send("EditDriver", driverInfo, callback)
+        currentService.service.Send("EditDriver", driverInfo, callback)
       },
       removeDriver: function (driverId, callback) {
-        this.service.Send("RemoveDriver", driverId, callback);
+        currentService.service.Send("RemoveDriver", driverId, callback);
       },
       unremoveDriver: function (driverId, callback) {
-        this.service.Send("UnRemoveDriver", driverId, callback);
+        currentService.service.Send("UnRemoveDriver", driverId, callback);
       },
       isUsernameExist: function (driverUsername, callback) {//boolean: T or F
-        this.service.Send("IsExistDriverUserName", driverUsername, callback)
+        currentService.service.Send("IsExistDriverUserName", driverUsername, callback)
       },
       isCodeExist: function (driverCode, callback) {//boolean: T or F
-        this.service.Send("IsExistDriverCode", driverCode, callback)
+        currentService.service.Send("IsExistDriverCode", driverCode, callback)
       },
     },
 
     service: {
       filterServices: function (startTime, endTime, index, length, callback) {
-        this.service.Send("GetListOfServices", startTime, endTime, index, length, callback);
+        currentService.service.Send("GetListOfServices", startTime, endTime, index, length, callback);
       },
       setServiceOperatorStep: function (serviceId, step, callback) {
-        this.service.Send("SetServiceStepFromOperator", serviceId, step, callback);
+        currentService.service.Send("SetServiceStepFromOperator", serviceId, step, callback);
       },
       setServiceOperator: function (serviceId, callback) {
-        this.service.Send("SetServiceOperator", serviceId, callback);
+        currentService.service.Send("SetServiceOperator", serviceId, callback);
       },
       getWaitingForCheckServices: function (callback) {
-        this.service.Send("GetWaitingForCheckServices", callback);
+        currentService.service.Send("GetWaitingForCheckServices", callback);
       },
       setResponse: function (transportId, serviceId, driverId, serviceMaxDelayTime, driverCommission, transportPayment, callback) {
-        this.service.Send("WSetResponse", transportId, serviceId, driverId, serviceMaxDelayTime, driverCommission, transportPayment, callback);
+        currentService.service.Send("WSetResponse", transportId, serviceId, driverId, serviceMaxDelayTime, driverCommission, transportPayment, callback);
       },
       editService: function (serviceInfo, callback) {
-        this.service.Send("EditServiceFromPanel", serviceInfo, callback);
+        currentService.service.Send("EditServiceFromPanel", serviceInfo, callback);
       },
     }
   }
