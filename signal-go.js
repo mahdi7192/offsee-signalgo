@@ -189,7 +189,7 @@ App.service('signalGo', function () {
       isCodeExist: function (driverCode, callback) {//boolean: T or F
         this.service.Send("IsExistDriverCode", driverCode, callback)
       },
-    }
+    },
 
     service: {
       filterServices: function (startTime, endTime, index, length, callback) {
