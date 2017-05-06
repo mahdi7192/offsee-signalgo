@@ -53,7 +53,7 @@ App.service('signalGo', function () {
       if(onErrorCallback) onErrorCallback({message: 'you are connected'});
       return;
     }
-    currentService.provider = new Clientrovider();
+    currentService.provider = new ClientProvider();
     currentService.status = 2;
     runCallbacks('onServerConnect', currentService.status);
 
