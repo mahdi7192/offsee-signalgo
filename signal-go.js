@@ -23,11 +23,8 @@ App.service('signalGo', function () {
     'onAddedService': [],
   };
 
-  function addToOnCallback(on, this.name, callback{;
+  function addToOnCallback(on, callback){
     if(onCallbacks[on] == undefined) onCallbacks[on],
-    onServerStatusChange: function(callback = [];){
-      tion addToOnCallback(on, this.name, callback{;
-    },
     onCallbacks[on].push(callback);
   }
 
