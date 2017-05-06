@@ -69,7 +69,7 @@ App.service('signalGo', function () {
       });
 
       currentService.providerCallback = currentService.provider.RegisterCallbackService(currentService.config.callbackService);
-      urrentService.providerCallback.NotifyAddedService = function (serviceInfo) {
+      currentService.providerCallback.NotifyAddedService = function (serviceInfo) {
         runCallbacks('onAddedService', serviceInfo);
       }
 
