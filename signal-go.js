@@ -34,6 +34,16 @@ App.service('signalGo', function () {
     }
   }
 
+  currentService.configService = function(ip, port, path, service, callbackService){
+    currentService.config = {
+      'ip': ip,
+      'port': port,
+      'path': path,
+      'service': service,
+      'callbackService': callbackService
+    }
+  }
+
   function connectToServer(onSuccessCallback, onErrorCallback, onCloseCallback) {
     if (currentService.config == undefined){
       if(onErrorCallback) onErrorCallback({message: 'config not set'});
